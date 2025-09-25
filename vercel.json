@@ -1,0 +1,58 @@
+{
+    "version": 2,
+    "framework": null,
+    "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.6.0" }
+    },
+    "routes": [
+        { "src": "/build/(.*)", "dest": "/public/build/$1" },
+        { "src": "/(.*)", "dest": "/api/index.php" }
+    ],
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "public"
+            }
+        }
+    ],
+    "buildCommand": "npm run build",
+    "outputDirectory": "public",
+    "installCommand": "npm install",
+    "env": {
+        "APP_NAME": "Laravel",
+        "APP_ENV": "production",
+        "APP_KEY": "base64:C7j3cNnjexK9Boi9zJGTK/NFR0UcPzR8uZT9tF9TPaI=",
+        "APP_DEBUG": "false",
+        "APP_URL": "https://your-vercel-app.vercel.app",
+        "FORCE_HTTPS": "true",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie",
+        "SESSION_LIFETIME": "120",
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "4gg.h.filess.io",
+        "DB_PORT": "3306",
+        "DB_DATABASE": "db2024_stormtorn",
+        "DB_USERNAME": "db2024_stormtorn",
+        "DB_PASSWORD": "",
+        "MAIL_MAILER": "smtp",
+        "MAIL_HOST": "sandbox.smtp.mailtrap.io",
+        "MAIL_PORT": "2525",
+        "MAIL_USERNAME": "fe59c343986914",
+        "MAIL_PASSWORD": "0015617001cc7c",
+        "MAIL_FROM_ADDRESS": "hello@example.com",
+        "MAIL_FROM_NAME": "Laravel",
+        "MIDTRANS_MERCHANT_ID": "G030635631",
+        "MIDTRANS_SERVER_KEY": "SB-Mid-server-xV4sewqRi6ndgYiyjP8koBSL",
+        "MIDTRANS_CLIENT_KEY": "SB-Mid-client-Y5cKQNs6hXUP3wLh",
+        "MIDTRANS_IS_PRODUCTION": "false"
+    }
+}

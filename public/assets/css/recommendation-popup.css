@@ -1,0 +1,283 @@
+/* CSS untuk Recommendation Popup - Tambahkan ke file CSS utama atau dalam <style> */
+
+/* Custom SweetAlert2 styling untuk popup rekomendasi */
+.recommendation-popup-custom {
+    border-radius: 20px !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
+    overflow: hidden !important;
+}
+
+.recommendation-close-btn {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #333 !important;
+    border-radius: 50% !important;
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.recommendation-close-btn:hover {
+    background: rgba(220, 53, 69, 0.1) !important;
+    color: #dc3545 !important;
+    transform: scale(1.1) !important;
+}
+
+/* Recommendation header styling */
+.recommendation-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: -2rem -2rem 2rem -2rem;
+    padding: 2rem;
+    color: white;
+    border-radius: 20px 20px 0 0;
+}
+
+.recommendation-header h3 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+.recommendation-header p {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 25px;
+    margin: 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Recommendation card enhancements */
+.recommendation-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.recommendation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s;
+    z-index: 1;
+}
+
+.recommendation-card:hover::before {
+    left: 100%;
+}
+
+.recommendation-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    border-color: rgba(102, 126, 234, 0.3) !important;
+}
+
+.recommendation-card .card-img-top {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    position: relative;
+    z-index: 0;
+}
+
+.recommendation-card:hover .card-img-top {
+    transform: scale(1.08) !important;
+}
+
+/* Confidence badge styling */
+.recommendation-card .badge {
+    border-radius: 15px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Category badge */
+.recommendation-card .badge.bg-secondary {
+    background: linear-gradient(45deg, #6c757d, #495057) !important;
+    color: white !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 0.65rem !important;
+}
+
+/* Add button styling */
+.recommendation-add-btn {
+    background: linear-gradient(45deg, #28a745, #20c997) !important;
+    border: none !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease !important;
+}
+
+.recommendation-add-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #20c997, #17a2b8);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.recommendation-add-btn:hover::before {
+    left: 0;
+}
+
+.recommendation-add-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4) !important;
+    color: white !important;
+}
+
+.recommendation-add-btn:active {
+    transform: translateY(0) !important;
+}
+
+/* Success button state */
+.recommendation-add-btn.btn-success {
+    background: linear-gradient(45deg, #28a745, #34ce57) !important;
+    animation: successPulse 0.6s ease-in-out;
+}
+
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Loading state untuk tombol */
+.recommendation-add-btn:disabled {
+    opacity: 0.8 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+.recommendation-add-btn .fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Price styling */
+.recommendation-card .text-success {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(40, 167, 69, 0.1);
+}
+
+/* Rule text styling */
+.recommendation-card .text-muted {
+    color: #6c757d !important;
+    font-style: italic;
+    line-height: 1.4;
+    font-size: 0.85rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .recommendation-popup-custom {
+        width: 95% !important;
+        margin: 1rem !important;
+    }
+    
+    .recommendation-header {
+        margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+        padding: 1.5rem;
+    }
+    
+    .recommendation-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .recommendation-header p {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .recommendation-card .card-img-top {
+        height: 120px !important;
+    }
+    
+    .recommendation-card .card-title {
+        font-size: 0.9rem;
+        min-height: 35px;
+    }
+    
+    .recommendation-add-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .recommendation-popup-custom {
+        width: 98% !important;
+        margin: 0.5rem !important;
+    }
+    
+    .recommendation-header {
+        margin: -1rem -1rem 1rem -1rem;
+        padding: 1rem;
+    }
+    
+    .recommendation-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .recommendation-card .card-img-top {
+        height: 100px !important;
+    }
+    
+    .recommendation-card .card-title {
+        font-size: 0.85rem;
+        min-height: 30px;
+    }
+}
+
+/* Animation untuk card masuk */
+.recommendation-card {
+    animation: slideInUp 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.recommendation-card:nth-child(1) { animation-delay: 0.1s; }
+.recommendation-card:nth-child(2) { animation-delay: 0.2s; }
+.recommendation-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Toast notification styling */
+.swal2-toast .swal2-success {
+    background: linear-gradient(45deg, #28a745, #20c997) !important;
+}
+
+/* Loading spinner enhancement */
+.spinner-border.text-primary {
+    border-color: rgba(102, 126, 234, 0.25);
+    border-top-color: #667eea;
+}
